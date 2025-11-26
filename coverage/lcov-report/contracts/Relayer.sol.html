@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/Relayer.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> Relayer.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12.5% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>2/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">9.09% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>2/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">16.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">22.73% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>5/22</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+pragma solidity 0.8.20;
+&nbsp;
+import { EIP712 } from "@openzeppelin/contracts/utils/cryptography/EIP712.sol";
+import { ECDSA } from "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
+import { Ownable } from "@openzeppelin/contracts/access/Ownable.sol";
+import { ReentrancyGuard } from "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+&nbsp;
+import { Router } from "./Router.sol";
+import { ProofVerifier } from "./ProofVerifier.sol";
+&nbsp;
+/// @title Relayer
+/// @notice Executes private swaps on behalf of users after verifying their signature and a zk proof of best execution.
+/// @dev Implements an EIP‑712 based meta‑transaction flow. Users sign off‑chain orders which are relayed on‑chain
+/// by a trusted relayer. Each order must include a valid zero‑knowledge proof attested by zkVerify to guarantee
+/// MEV protection and best execution.
+contract Relayer is EIP712, Ownable, ReentrancyGuard {
+    /// -----------------------------------------------------------------------
+    /// Types
+    /// -----------------------------------------------------------------------
+&nbsp;
+    /// @notice Encapsulates the data required to execute a swap on behalf of a user.
+    struct SwapOrder {
+        address user;
+        address tokenIn;
+        address tokenOut;
+        uint256 amountIn;
+        uint256 amountOutMin;
+        uint256 deadline;
+        uint256 nonce;
+    }
+&nbsp;
+    /// @notice EIP‑712 type hash for SwapOrder struct.
+    bytes32 public immutable SWAP_TYPEHASH;
+&nbsp;
+    /// -----------------------------------------------------------------------
+    /// Storage
+    /// -----------------------------------------------------------------------
+&nbsp;
+    /// @notice The router used to execute swaps. Must implement executeSwap() matching Router.sol.
+    Router public router;
+    /// @notice Proof verifier contract that wraps zkVerify aggregation verification.
+    ProofVerifier public proofVerifier;
+&nbsp;
+    /// @notice Mapping of user address to the next valid nonce. Each order consumes exactly one nonce.
+    mapping(address =&gt; uint256) public nonces;
+&nbsp;
+    /// -----------------------------------------------------------------------
+    /// Events
+    /// -----------------------------------------------------------------------
+&nbsp;
+    /// @notice Emitted when an order is successfully executed.
+    /// @param user The user for whom the swap was performed.
+    /// @param tokenIn Token sold.
+    /// @param tokenOut Token bought.
+    /// @param amountIn Amount of tokenIn spent.
+    /// @param amountOutMin Minimum amount requested for tokenOut.
+    /// @param outputAmount Actual amount of tokenOut received.
+    event OrderExecuted(
+        address indexed user,
+        address indexed tokenIn,
+        address indexed tokenOut,
+        uint256 amountIn,
+        uint256 amountOutMin,
+        uint256 outputAmount
+    );
+&nbsp;
+    /// -----------------------------------------------------------------------
+    /// Constructor
+    /// -----------------------------------------------------------------------
+&nbsp;
+    /// @param _router Address of the Router contract responsible for performing swaps.
+    /// @param _proofVerifier Address of the ProofVerifier contract responsible for verifying aggregated proofs.
+    /// @param _name Name used for the EIP‑712 domain separator (e.g. "DEXAggregator").
+    /// @param _version Version used for the EIP‑712 domain separator (e.g. "1").
+    constructor(
+        address _router,
+        address _proofVerifier,
+        string memory _name,
+        string memory _version
+    ) EIP712(_name, _version) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_router != address(0), "Relayer: zero router address");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_proofVerifier != address(0), "Relayer: zero verifier address");
+        router = Router(_router);
+        proofVerifier = ProofVerifier(_proofVerifier);
+        // Compute the typehash for SwapOrder using keccak256 on the type string. This must match the struct layout.
+        SWAP_TYPEHASH = keccak256(
+            "SwapOrder(address user,address tokenIn,address tokenOut,uint256 amountIn,uint256 amountOutMin,uint256 deadline,uint256 nonce)"
+        );
+    }
+&nbsp;
+    /// -----------------------------------------------------------------------
+    /// Owner functions
+    /// -----------------------------------------------------------------------
+&nbsp;
+    /// @notice Updates the Router contract. Only callable by the owner.
+    /// @param newRouter The address of the new router.
+<span class="fstat-no" title="function not covered" >    function setRouter(address newRouter) external onlyOwner {</span>
+<span class="cstat-no" title="statement not covered" >        require(newRouter != address(0), "Relayer: zero router address")</span>;
+        router = Router(newRouter);
+    }
+&nbsp;
+    /// @notice Updates the ProofVerifier contract. Only callable by the owner.
+    /// @param newVerifier The address of the new proof verifier.
+<span class="fstat-no" title="function not covered" >    function setProofVerifier(address newVerifier) external onlyOwner {</span>
+<span class="cstat-no" title="statement not covered" >        require(newVerifier != address(0), "Relayer: zero verifier address")</span>;
+        proofVerifier = ProofVerifier(newVerifier);
+    }
+&nbsp;
+    /// -----------------------------------------------------------------------
+    /// Public functions
+    /// -----------------------------------------------------------------------
+&nbsp;
+    /// @notice Executes a swap on behalf of the user after verifying their signature and zk proof.
+    /// @dev The relayer (msg.sender) is expected to call this function. It checks that the order has not
+    /// expired, verifies the user's signature via EIP‑712, validates the zk proof via ProofVerifier, then
+    /// calls the Router. Upon success, the user's nonce is incremented to prevent replay attacks.
+    /// @param order The parameters describing the swap to perform.
+    /// @param signature The EIP‑712 signature produced by the user over the order.
+    /// @param domainId Domain identifier used when the proof was generated.
+    /// @param aggregationId Aggregation identifier obtained when proofs were aggregated via zkVerify.
+    /// @param publicInputs Public inputs array to the zk circuit. This should encode the best execution details.
+    /// @param merklePath Merkle proof path to the leaf in the aggregation tree.
+    /// @param leafCount Number of leaves in the aggregation tree.
+    /// @param index Position of the leaf in the aggregation tree.
+<span class="fstat-no" title="function not covered" >    function executeSwapWithProof(</span>
+        SwapOrder calldata order,
+        bytes calldata signature,
+        uint256 domainId,
+        uint256 aggregationId,
+        bytes32[] calldata publicInputs,
+        bytes32[] calldata merklePath,
+        uint256 leafCount,
+        uint256 index
+    ) external nonReentrant {
+        // Ensure the order is still valid
+<span class="cstat-no" title="statement not covered" >        require(block.timestamp &lt;= order.deadline, "Relayer: order expired")</span>;
+<span class="cstat-no" title="statement not covered" >        require(order.nonce == nonces[order.user], "Relayer: invalid nonce")</span>;
+&nbsp;
+        // Verify the user's signature matches the order
+<span class="cstat-no" title="statement not covered" >        require(_verify(order, signature), "Relayer: invalid signature")</span>;
+&nbsp;
+        // Verify the zk proof via the ProofVerifier contract
+<span class="cstat-no" title="statement not covered" >        bool proofValid = proofVerifier.verify(</span>
+            domainId,
+            aggregationId,
+            publicInputs,
+            merklePath,
+            leafCount,
+            index
+        );
+<span class="cstat-no" title="statement not covered" >        require(proofValid, "Relayer: invalid proof")</span>;
+&nbsp;
+        // Increment the user's nonce to prevent replay
+        nonces[order.user] = order.nonce + 1;
+&nbsp;
+        // Execute the swap via Router and capture the output amount
+<span class="cstat-no" title="statement not covered" >        uint256 outputAmount = router.executeSwap(</span>
+            order.user,
+            order.tokenIn,
+            order.tokenOut,
+            order.amountIn,
+            order.amountOutMin
+        );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        emit OrderExecuted(</span>
+            order.user,
+            order.tokenIn,
+            order.tokenOut,
+            order.amountIn,
+            order.amountOutMin,
+            outputAmount
+        );
+    }
+&nbsp;
+    /// -----------------------------------------------------------------------
+    /// Internal functions
+    /// -----------------------------------------------------------------------
+&nbsp;
+    /// @notice Computes the EIP‑712 digest for a SwapOrder.
+    /// @param order The order to hash.
+    /// @return The digest to be signed according to EIP‑712.
+<span class="fstat-no" title="function not covered" >    function _hash(SwapOrder memory order) internal view returns (bytes32) {</span>
+<span class="cstat-no" title="statement not covered" >        bytes32 structHash = keccak256(</span>
+            abi.encode(
+                SWAP_TYPEHASH,
+                order.user,
+                order.tokenIn,
+                order.tokenOut,
+                order.amountIn,
+                order.amountOutMin,
+                order.deadline,
+                order.nonce
+            )
+        );
+<span class="cstat-no" title="statement not covered" >        return _hashTypedDataV4(structHash);</span>
+    }
+&nbsp;
+    /// @notice Verifies the signature for a given order.
+    /// @param order The order data.
+    /// @param signature Signature from the user.
+    /// @return True if the recovered signer matches the order.user.
+<span class="fstat-no" title="function not covered" >    function _verify(SwapOrder memory order, bytes calldata signature) internal view returns (bool) {</span>
+<span class="cstat-no" title="statement not covered" >        bytes32 digest = _hash(order);</span>
+<span class="cstat-no" title="statement not covered" >        address signer = ECDSA.recover(digest, signature);</span>
+<span class="cstat-no" title="statement not covered" >        return signer == order.user;</span>
+    }
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Nov 26 2025 17:09:35 GMT+0700 (Western Indonesia Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

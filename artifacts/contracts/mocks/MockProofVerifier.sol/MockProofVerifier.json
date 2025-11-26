@@ -1,0 +1,55 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "MockProofVerifier",
+  "sourceName": "contracts/mocks/MockProofVerifier.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes32[]",
+          "name": "",
+          "type": "bytes32[]"
+        },
+        {
+          "internalType": "bytes32[]",
+          "name": "",
+          "type": "bytes32[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "verify",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608080604052346100155760e8908161001b8239f35b600080fdfe6080806040526004361015601257600080fd5b600090813560e01c633402b28b14602857600080fd5b34607b5760c0366003190112607b5767ffffffffffffffff91604435838111607b576056903690600401607f565b50506064359283116078575060706020923690600401607f565b505060018152f35b80fd5b5080fd5b9181601f8401121560ad5782359167ffffffffffffffff831160ad576020808501948460051b01011160ad57565b600080fdfea26469706673582212209c1474f6325913e271a00d58f545434e53f6496249ee7eef7e98c7c34046eb6e64736f6c63430008140033",
+  "deployedBytecode": "0x6080806040526004361015601257600080fd5b600090813560e01c633402b28b14602857600080fd5b34607b5760c0366003190112607b5767ffffffffffffffff91604435838111607b576056903690600401607f565b50506064359283116078575060706020923690600401607f565b505060018152f35b80fd5b5080fd5b9181601f8401121560ad5782359167ffffffffffffffff831160ad576020808501948460051b01011160ad57565b600080fdfea26469706673582212209c1474f6325913e271a00d58f545434e53f6496249ee7eef7e98c7c34046eb6e64736f6c63430008140033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/ProofVerifier.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> ProofVerifier.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/8</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: Apache-2.0
+pragma solidity 0.8.20;
+&nbsp;
+import { IVerifyProofAggregation } from "./interfaces/IVerifyProofAggregation.sol";
+&nbsp;
+/// @title ProofVerifier
+/// @notice Helper contract to compute leaf digests and call zkVerify to validate aggregated proofs.
+/// @dev Stores immutable proving system ID, version hash, verification key hash and zkVerify contract address.
+contract ProofVerifier {
+    /// @notice Immutable hash of the verification key registered with zkVerify for this circuit.
+    bytes32 public immutable vkey;
+    /// @notice Immutable proving system identifier used for this circuit (e.g. keccak256("groth16")).
+    bytes32 public immutable PROVING_SYSTEM_ID;
+    /// @notice Immutable hash of the prover version (e.g. sha256("circom:1.0.0")).
+    bytes32 public immutable VERSION_HASH;
+    /// @notice Address of the zkVerify proxy contract used for verification.
+    IVerifyProofAggregation public immutable zkVerify;
+&nbsp;
+    /// @param zkVerifyAddress Address of the zkVerify contract on the target network.
+    /// @param vkeyHash Hash of the verification key registered with zkVerify.
+    /// @param provingSystem String identifier of the proving system (e.g. "groth16", "risc0").
+    /// @param proverVersion Version string of the prover used to generate proofs.
+<span class="fstat-no" title="function not covered" >    constructor(</span>
+        address zkVerifyAddress,
+        bytes32 vkeyHash,
+        string memory provingSystem,
+        string memory proverVersion
+    ) {
+<span class="cstat-no" title="statement not covered" >        require(zkVerifyAddress != address(0), "ProofVerifier: zero zkVerify address")</span>;
+        zkVerify = IVerifyProofAggregation(zkVerifyAddress);
+        vkey = vkeyHash;
+        PROVING_SYSTEM_ID = keccak256(abi.encodePacked(provingSystem));
+        VERSION_HASH = sha256(abi.encodePacked(proverVersion));
+    }
+&nbsp;
+    /// @notice Verifies a leaf within an aggregated proof via zkVerify.
+    /// @param domainId Domain identifier assigned when proofs were generated.
+    /// @param aggregationId Aggregation ID returned by zkVerify during proof submission.
+    /// @param publicInputs Array of public inputs used by the circuit; hashed internally.
+    /// @param merklePath Merkle path to the proof leaf within the aggregation tree.
+    /// @param leafCount Total number of leaves in the aggregation tree.
+    /// @param index Index of the leaf being verified.
+    /// @return True if the proof is valid, false otherwise.
+<span class="fstat-no" title="function not covered" >    function verify(</span>
+        uint256 domainId,
+        uint256 aggregationId,
+        bytes32[] calldata publicInputs,
+        bytes32[] calldata merklePath,
+        uint256 leafCount,
+        uint256 index
+    ) external view returns (bool) {
+        // Hash the public inputs into a single digest
+<span class="cstat-no" title="statement not covered" >        bytes32 inputsHash = keccak256(abi.encodePacked(publicInputs));</span>
+        // Compose the leaf digest according to zkVerify spec
+<span class="cstat-no" title="statement not covered" >        bytes32 leaf = keccak256(</span>
+            abi.encodePacked(
+                PROVING_SYSTEM_ID,
+                vkey,
+                VERSION_HASH,
+                inputsHash
+            )
+        );
+        // Delegate verification to the zkVerify contract
+<span class="cstat-no" title="statement not covered" >        return zkVerify.verifyProofAggregation(domainId, aggregationId, leaf, merklePath, leafCount, index);</span>
+    }
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Nov 26 2025 17:09:35 GMT+0700 (Western Indonesia Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

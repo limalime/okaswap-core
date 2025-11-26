@@ -1,0 +1,55 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "IVerifyProofAggregation",
+  "sourceName": "contracts/interfaces/IVerifyProofAggregation.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_domainId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_aggregationId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "_leaf",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32[]",
+          "name": "_merklePath",
+          "type": "bytes32[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_leafCount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_index",
+          "type": "uint256"
+        }
+      ],
+      "name": "verifyProofAggregation",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
